@@ -1,7 +1,7 @@
 # RxBus
 An event bus in 27 LOC. 
 
-1. Add Kotlin, RxJava 1 and RxAndroid to you project.
+1. Add Kotlin, [RxJava 1](https://github.com/ReactiveX/RxJava) and [RxAndroid](https://github.com/ReactiveX/RxAndroid) to you project.
 
 2. Copy and past the RxBus code into project 
 
