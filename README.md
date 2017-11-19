@@ -41,7 +41,7 @@ RxBus.register(Event::class.java)
     }
 ```
 
-6. Post and event with 
+6. Post an event with 
 ```kotlin
 RxBus.post(Event())
 ```
