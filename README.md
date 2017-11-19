@@ -33,7 +33,7 @@ object RxBus {
 
 4. Instantiate RxBus in `onCreate` of your application class with `RxBus(AndroidSchedulers.mainThread())`
 
-5. Register the event and wait to sonsume them.
+5. Register the event and wait to consume them.
 ```kotlin
 RxBus.register(Event::class.java)
     .subscribe{ event ->
