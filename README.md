@@ -11,18 +11,15 @@ object RxBus {
   private val mBusSubject = SerializedSubject(BehaviorSubject.create<Any>())
   lateinit var uiScheduler: Scheduler
 
-  operator fun invoke(sch: Scheduler) {
-    uiScheduler = sch
-  }
+  operator fun invoke(sch: Scheduler) { uiScheduler = sch }
 
-  fun <T> register(eventClass: Class<T>): Observable<T>
-      = mBusSubject.filter({ event -> eventClass.isInstance(event) })
+  fun <T> register(eventClass: Class<T>): Observable<T> = 
+    mBusSubject.filter({ event -> eventClass.isInstance(event) })
       .observeOn(uiScheduler)
       .onBackpressureBuffer()
       .map<T>({ eventClass.cast(it) })
 
   fun post(event: Any) = mBusSubject.onNext(event)
-
 }
 ```
 
